@@ -34,6 +34,12 @@ export class AuthService {
 
     const payload = { sub: user.id, email: user.email };
     return {
+      message: 'user signed up successfully',
+      user: {
+        name: user.name,
+        email: user.email,
+      },
+      statusCode: 200,
       access_token: this.jwtService.sign(payload),
     };
   }
@@ -48,6 +54,12 @@ export class AuthService {
 
     const payload = { sub: user.id, email: user.email };
     return {
+      message: 'user signed in successfully',
+      user: {
+        name: user.name,
+        email: user.email,
+      },
+      statusCode: 200,
       access_token: this.jwtService.sign(payload),
     };
   }
